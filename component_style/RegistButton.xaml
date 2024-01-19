@@ -1,0 +1,41 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <!-- Style sheet for regist button -->
+    <Style BasedOn="{StaticResource {x:Type Button}}"
+         TargetType="{x:Type Button}"
+         x:Key="RegistButtonTheme">
+        <Style.Setters>
+            <!-- Set template property -->
+            <Setter Property="Background" Value="#B9FF92"/>
+            <Setter Property="Width" Value="100"/>
+            <Setter Property="Height" Value="40"/>
+            <Setter Property="HorizontalAlignment" Value="Right"/>
+            <Setter Property="Margin" Value="0,0,10,0"/>
+            <Setter Property="BorderThickness" Value="0"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <!-- Set button backgroun -->
+                        <Border CornerRadius="10"
+                             Background="{TemplateBinding Background}">
+                            <Grid>
+                                <!-- Set button text -->
+                                <TextBlock Text="登録"
+                                         VerticalAlignment="Center"
+                                         HorizontalAlignment="Center"
+                                         FontSize="18"
+                                         Foreground="Black"/>
+                            </Grid>
+                        </Border>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style.Setters>
+        <!-- Set trigger change color when pressed -->
+        <Style.Triggers>
+            <Trigger Property="IsPressed" Value="True">
+                <Setter Property="Background" Value="LightGreen"/>
+            </Trigger>
+        </Style.Triggers>
+    </Style>
+</ResourceDictionary>

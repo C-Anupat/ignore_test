@@ -1,0 +1,37 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <!-- Style sheet for menu bar content -->
+    <Style BasedOn="{StaticResource {x:Type ToggleButton}}"
+       TargetType="RadioButton"
+       x:Key="MenuButtonTheme">
+        <Style.Setters>
+            <!-- Set template property -->
+            <Setter Property="Foreground" Value="White"/>
+            <Setter Property="Background" Value="Transparent"/>
+            <Setter Property="BorderThickness" Value="0"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="RadioButton">
+                        <Grid VerticalAlignment="Stretch"
+                          HorizontalAlignment="Stretch"
+                          Background="{TemplateBinding Background}">
+                            <!-- Set display text from component -->
+                            <TextBlock x:Name="MenuText1" 
+                                       Text="{TemplateBinding Property=Content}"
+                                       VerticalAlignment="Center"
+                                       Margin="20,0,0,0"
+                                       Visibility="Visible"/>
+                        </Grid>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style.Setters>
+        <Style.Triggers>
+            <!-- Change color text and background with pressed -->
+            <Trigger Property="IsChecked" Value="True">
+                <Setter Property="Background" Value="#A5E382"/>
+                <Setter Property="Foreground" Value="Black"/>
+            </Trigger>
+        </Style.Triggers>
+    </Style>
+</ResourceDictionary>
